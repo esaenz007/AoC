@@ -1,3 +1,6 @@
+# This file builds out the folder structure AoC
+# This file also takes in a year as an argument.  If no year is supplied, the current year is used.
+
 import asyncio
 from datetime import date
 import os
@@ -17,6 +20,7 @@ async def main():
             year = args[0]
         else:
             print("First argument must by a year.")
+            return 0
 
     # Create folder for this years Advent of Code
     print("Creating this years directory...")
