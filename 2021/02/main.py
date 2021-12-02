@@ -23,10 +23,8 @@ def calc_position(directions:list, curr_depth:int=0, curr_horz_position:int=0, c
     else:
         return curr_depth, curr_horz_position
 
-# Calculate total depth & horz position
+# Calculate horz position & total depth
 horizontal_position, total_depth = calc_position(directions)
-
-# Print results
 print(f"Horizontal Position: {horizontal_position}, Depth: {total_depth}, Product: {total_depth*horizontal_position}")
 
 
@@ -51,8 +49,6 @@ def calc_position(directions:list, curr_depth:int=0, curr_horz_position:int=0, c
     else:
         return curr_horz_position, curr_depth
 
-# Calculate total depth & horz position
+# Calculate horz position & total depth
 horizontal_position, total_depth = calc_position(directions)
-
-# Print results
 print(f"Horizontal Position: {horizontal_position}, Depth: {total_depth}, Product: {total_depth*horizontal_position}")
