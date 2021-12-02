@@ -1,15 +1,15 @@
 import sys
-sys.setrecursionlimit(1500)# Increase max recustion limit
+sys.setrecursionlimit(14000)# Increase max recustion limit
 
-directions = open("inputs_test.csv").read().split("\n") # Credit to Alex Lach for simple one liner file reader
+directions = [x.split(" ") for x in open("inputs_test.csv").read().split("\n")]
 
 # Part 1
 # Recursive function returns horz position and depth based on list of directions
 def calc_position(directions:list, curr_depth:int=0, curr_horz_position:int=0, curr_direction_index=0):
     
     if curr_direction_index < len(directions):
-        curr_direction = directions[curr_direction_index].split(" ")
-
+        curr_direction = directions[curr_direction_index]
+        
         if curr_direction[0] == "forward":
             curr_horz_position += int(curr_direction[1])
         elif curr_direction[0] == "down":
@@ -33,7 +33,7 @@ print(f"Horizontal Position: {horizontal_position}, Depth: {total_depth}, Produc
 def calc_position(directions:list, curr_depth:int=0, curr_horz_position:int=0, curr_aim=0, curr_direction_index=0):
     
     if curr_direction_index < len(directions):
-        curr_direction = directions[curr_direction_index].split(" ")
+        curr_direction = directions[curr_direction_index]
 
         if curr_direction[0] == "forward":
             curr_horz_position += int(curr_direction[1])
