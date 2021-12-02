@@ -1,4 +1,4 @@
-from common import get_compare_description, get_inputs, create_running_sum, get_value_change_status, get_depth_change_type_count
+from ..utils.common import get_compare_description, get_inputs, create_running_sum, get_value_change_status, get_depth_change_type_count
 
 # Inputs file name
 inputs_file_name = "inputs.csv"
