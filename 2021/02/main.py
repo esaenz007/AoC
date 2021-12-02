@@ -1,7 +1,7 @@
 import sys
 sys.setrecursionlimit(14000)# Increase max recustion limit
 
-directions = [x.split(" ") for x in open("inputs_test.csv").read().split("\n")]
+directions = [x.split(" ") for x in open("inputs.csv").read().split("\n")]
 
 # Part 1
 # Recursive function returns horz position and depth based on list of directions
