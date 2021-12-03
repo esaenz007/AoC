@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(14000)# Increase max recustion limit
+sys.setrecursionlimit(1010)# Increase max recustion limit
 
 directions = [x.split(" ") for x in open("inputs.csv").read().split("\n")]
 
