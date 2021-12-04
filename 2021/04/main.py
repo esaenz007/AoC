@@ -1,6 +1,6 @@
 from bingo import BingoCard
 
-input_file_name = "inputs_test.csv"
+input_file_name = "inputs.csv"
 numbers_called = []
 bingo_cards = []
 
@@ -60,7 +60,7 @@ for n in numbers_called:
 
 print("\nPart 2")
 print("============================")
-print(f"Wining number: {winning_number}")
 print(f"Last card to win: {last_winning_card_index + 1}")
+print(f"Wining number: {winning_number}")
 unmarked_numbers = bingo_cards[last_winning_card_index].get_unmarked_numbers()
 print(f"Solution: {winning_number * sum(unmarked_numbers)}")

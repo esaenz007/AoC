@@ -21,8 +21,8 @@ class BingoCard(object):
             for col_index, n in enumerate(row):
                 if  n.number == number:
                     n.marked = True
-                    # After 5 marks, start checking for bingo winner
-                    if self.numbers_marked >= 5:
+                    # After 5 marks, start checking for bingo winner and not already a winner
+                    if self.numbers_marked >= 5 and not self.bingo:
                         self.bingo = self.check_row(row_index)
                         if self.bingo:
                             break
@@ -31,8 +31,6 @@ class BingoCard(object):
                             break
             if self.bingo:
                 break
-
-        return self.bingo
 
     def get_unmarked_numbers(self):
         unmarked_numbers = []
