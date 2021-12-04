@@ -1,14 +1,13 @@
-class BingoNumber(object):
+class BingoCardNumber(int):
     def __init__(self,number:int):
         self.number:int = number
         self.marked:bool = False
     
-
 class BingoCard(object):
     def __init__(self,numbers):
-        self.numbers = [
+        self.numbers:list = [
             [
-                BingoNumber(y) for y in x
+                BingoCardNumber(y) for y in x
             ] for x in numbers
         ]
         self.numbers_marked:int = 0
