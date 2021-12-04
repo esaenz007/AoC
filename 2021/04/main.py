@@ -42,14 +42,14 @@ print("============================")
 print(f"Winning number: {winning_number}")
 print(f"Solution: {winning_number * sum(unmarked_numbers)}")
 
-# Part 2
 # Reset bingo cards
 for x in bingo_cards:
     x.reset_card()
 
+# Part 2
 last_winning_card_index=0
 winning_number=0
-# Play all numbers keeping track of last winning card
+# Play all numbers keeping track of last winning card & winning number
 for n in numbers_called:
     for i, bc in enumerate(bingo_cards):
         if not bc.bingo: #Only play cards that have not won
