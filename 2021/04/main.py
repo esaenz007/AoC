@@ -1,15 +1,13 @@
 from bingo import BingoCard
 
-input_file_name = "inputs.csv"
+input_file_name = "inputs_test.csv"
 numbers_called = []
 bingo_cards = []
 
 # Load input data into memory
 input_data = open(input_file_name).read().split("\n")
-
 # Load called numbers
 numbers_called = [int(x) for x in input_data[0].split(",")]
-
 # Load all bingo cards
 card_index = 2
 while card_index < len(input_data):
@@ -17,10 +15,10 @@ while card_index < len(input_data):
     bingo_card_matrix = [[int(y) for y in x] for x in bingo_card_matrix]
     bingo_cards.append(BingoCard(bingo_card_matrix))
     card_index += 6
-
 # Remove input data from memory
 input_data.clear()
 input_data = None
+
 
 # Part 1
 winning_number = 0
@@ -36,7 +34,7 @@ for n in numbers_called:
             break
     if bc.bingo: 
         break
-    
+
 print("Part 1")
 print("============================")
 print(f"Winning number: {winning_number}")

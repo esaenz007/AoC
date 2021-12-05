@@ -55,6 +55,7 @@ class BingoCard(object):
     def reset_card(self):
         self.bingo = False
         self.numbers_marked = 0
-        for x in self.numbers:
+        marked_numbers = [[y for y in x if y.marked] for x in self.numbers]
+        for x in marked_numbers:
             for y in x:
                 y.marked = False
