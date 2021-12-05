@@ -1,6 +1,6 @@
 from bingo import BingoCard
 
-input_file_name = "inputs_test.csv"
+input_file_name = "inputs.csv"
 numbers_called = []
 bingo_cards = []
 
