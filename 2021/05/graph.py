@@ -37,13 +37,7 @@ class LineChart(object):
                 break
 
     def get_dangerous_point_count(self):
-        dangerous_poitns = 0
-        for  x in self.points:
-            for y in x:
-                if y > 1:
-                    dangerous_poitns += 1
-
-        return dangerous_poitns
+        return sum( [ len( [y for y in x if y > 1])for x in self.points])
 
     def print_chart(self):
         for x in self.points:
