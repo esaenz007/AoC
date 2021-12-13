@@ -17,30 +17,24 @@ class SevenSegmentDisplay(object):
         self.signal_wiring = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7}
 
     def get_number(self,signals):
-        digits = list(reversed( signals.split(" ")))
         number = None
-        for i,d in enumerate( digits):
-            signals = [x for x in d]
-            segments = [v for k,v in self.signal_wiring.items() if k in d]
-            segments.sort()
-            number_map = [i for i,v in enumerate(self.digits_segments_map) if v == segments]
-            if len(number_map) == 1:
-                number = 0 if number is None else number
-                number += number_map[0] if i == 0 else number_map[0] * pow(10,i)
+        signals = [x for x in signals]
+        segments = [v for k,v in self.signal_wiring.items() if k in signals]
+        segments.sort()
+        found_number = [i for i,v in enumerate(self.digits_segments_map) if v == segments]
+        if len(found_number) == 1:
+            number = found_number[0]
         return number
 
     def get_segments(self,number):
         return self.digits_segments_map[number]
 
     def get_segment_signal(self,segment):
-        for k,v in self.signal_wiring.items():
-            if v == segment:
-                return k
+        signal = [k for k,v in self.signal_wiring.items() if v == segment]
+        return signal[0] if len(signal) == 1 else None    
 
     def get_signals(self,number):
-        segments = self.get_segments(number)
-        signals = "".join( [k for k,v in self.signal_wiring.items() if v in segments])
-        return signals
+        return "".join( [k for k,v in self.signal_wiring.items() if v in self.get_segments(number)])
 
     def swap_signals(self,signal1,signal2):
         tmp = self.signal_wiring[signal1]
