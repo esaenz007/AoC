@@ -46,7 +46,7 @@ def count_dots(paper):
 width = max(x[0] for x in dots)+1
 height = max(x[1] for x in dots)+1
 
-paper = [['.' for y in range(width)] for x in range(height)]
+paper = [[' ' for y in range(width)] for x in range(height)]
 
 for x in dots:
     paper[x[1]][x[0]] = '#'
